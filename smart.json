@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "offline-common": {
+      "git": "https://github.com/awwx/meteor-offline-common.git",
+      "tag": "v0.0.4"
+    }
+  }
+}
