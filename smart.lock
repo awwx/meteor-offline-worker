@@ -11,7 +11,7 @@
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
         "tag": "v0.0.4",
-        "commit": "8efc4b9666176026931d013f093fac94b7d996dd"
+        "commit": "16adcce0f30dcd2983b8af7c9e0e8409b66ae221"
       },
       "browser-msg": {
         "git": "https://github.com/awwx/meteor-browser-msg.git",

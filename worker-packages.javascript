@@ -13321,7 +13321,6 @@ Offline._messageAgent = function() {
   var args, topic;
 
   topic = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-  Meteor._debug('messaging agent', topic, args);
   if (Offline._usingSharedWebWorker) {
     Offline._sharedWebWorker.post({
       msg: topic,
@@ -13337,11 +13336,9 @@ Offline._messageAgent = function() {
 };
 
 if (this.Agent != null) {
-  Meteor._debug('agent');
   Agent.addMessageHandler('update', function(sourcePort, data) {
     var port, _i, _len, _ref1;
 
-    Meteor._debug('update from client');
     _ref1 = Agent.ports;
     for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
       port = _ref1[_i];
@@ -13857,7 +13854,6 @@ Meteor.startup(function() {
   if (this.Agent != null) {
     initializeAgent();
   } else {
-    Meteor._debug('nowAgent listen');
     nowAgent.listen(initializeAgent);
   }
 });
