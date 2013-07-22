@@ -84,18 +84,14 @@
   var booted = false;
 
   Agent.addMessageHandler('boot', function (port, data) {
-    Agent.log("hello from " + data.windowId);
-
     var i = Agent.ports.indexOf(port);
-    Agent.windowIds[i] = data.windowId;
-    Agent.log("windowIds " + JSON.stringify(Agent.windowIds));
+    if (i !== -1)
+      Agent.windowIds[i] = data.windowId;
 
     if (booted)
       return;
 
     global.__meteor_runtime_config__ = data.__meteor_runtime_config__;
-
-    Agent.log("boot " + __meteor_runtime_config__.serverId);
 
     // We will at least hear about syntax errors now because of the
     // onerror handler above, but there doesn't seem to be a way to
