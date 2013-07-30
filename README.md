@@ -30,6 +30,9 @@ unfortunately the displayed error line number for a syntax error is
 the line in `boot.javascript` which loads the code, instead of the
 line of the actual syntax error.
 
+
+## Building
+
 As a horrible hack :-), `packages.javascript` is built via:
 
 ```
