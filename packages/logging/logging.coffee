@@ -19,3 +19,5 @@ time = ->
 
 Meteor._debug = (args...) ->
   Agent.log(time() + ': ' + _.map(args, str).join(' '))
+
+Log = {}

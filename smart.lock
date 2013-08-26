@@ -4,24 +4,29 @@
     "basePackages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.1.0"
+        "tag": "v0.2.0rc1"
       }
     },
     "packages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.1.0",
-        "commit": "5eea8a9089ce3bfd831efc0379cceb293f407d46"
+        "tag": "v0.2.0rc1",
+        "commit": "297c55e33ad5400895148ebb8bc9beb3b21e4e90"
       },
       "browser-msg": {
         "git": "https://github.com/awwx/meteor-browser-msg.git",
-        "tag": "v0.0.2",
-        "commit": "f9bdea97869bfc94c1de261da6a43f1294c8a0ef"
+        "tag": "v1.1.0",
+        "commit": "1122730ca4229a3de09c40205ce7161fd9bed045"
       },
       "canonical-stringify": {
         "git": "https://github.com/awwx/meteor-canonical-stringify.git",
-        "tag": "v1.1",
-        "commit": "2bb6dedf87f9784471a10fd2e8c332d971ff5291"
+        "tag": "v1.2",
+        "commit": "ef16273f50050cb478ade5a9aaba7e448962ece2"
+      },
+      "useragent": {
+        "git": "https://github.com/awwx/meteor-useragent.git",
+        "tag": "v0.0.2",
+        "commit": "8737222105a50cfe484ccd09728bdfa7c35288a2"
       }
     }
   }

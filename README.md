@@ -33,23 +33,12 @@ line of the actual syntax error.
 
 ## Building
 
-As a horrible hack :-), `packages.javascript` is built via:
+`worker-packages.javascript` is built via:
 
 ```
 $ mrt install
-$ meteor
-[[[[[ ~/offline-worker ]]]]]
-
-=> Meteor server running on: http://localhost:3000/
-^C
-$ coffee build.coffee
+$ ./build.sh
 ```
-
-which extracts the particular packages used by the shared web worker
-from the local build and saves them to `worker-packages.javascript`.
-(If the currently-under-development Meteor linker eventually supports
-building separate client programs, that will probably be the preferred
-way to do the build in the future).
 
 The `.javascript` extension is used to have the files included as
 static resources instead of being bundled into the main application's
@@ -62,7 +51,7 @@ shared web worker environment:
   overrides Meteor's `logging` package to send `Meteor._debug`
   messages back to the connecting windows.
 
-* startup: shared web workers don't have a `load` event, so the
+* meteor: shared web workers don't have a `load` event, so the
   package implements `Meteor.startup` to simply call the startup
   callbacks once all the packages have been loaded.
 
@@ -72,9 +61,10 @@ shared web worker environment:
   instantiates the shared web worker, it does so with a URL which
   includes the hash of the boot code.  Shared web workers are
   identified by URL, so if the code has changed, the reloaded window
-  will get a new instance of the shared web worker.  (TODO: this needs
-  to include the hash of the package code to catch changes made to the
-  agent implementation).
+  will get a new instance of the shared web worker.
 
 * livedata: SockJS is modified to run in the shared web worker
   environment.
+
+* json: the shared web worker environment always has native JSON, so
+  there's no need to include the json2 implementation in the bundle.

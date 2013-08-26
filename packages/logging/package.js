@@ -4,6 +4,6 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use('coffeescript');
+  api.use(['coffeescript', 'underscore'], 'client');
   api.add_files('logging.coffee', 'client');
 });

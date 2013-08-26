@@ -2,3 +2,20 @@
 #
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
+
+underscore
+meteor
+deps
+json
+ejson
+logging
+reload
+check
+random
+livedata
+ordered-dict
+minimongo
+mongo-livedata
+startup
+canonical-stringify
+offline-common

@@ -1,5 +1,6 @@
-_ = require 'underscore'
 fs = require 'fs'
+path = require 'path'
+join = path.join
 
 
 # These are the packages we load in the shared web worker.
@@ -14,50 +15,27 @@ workerPackages = """
   reload
   check
   random
-  livedata
   ordered-dict
   minimongo
+  livedata
   mongo-livedata
-  startup
   canonical-stringify
   offline-common
 """.split(/\s/)
 
-buildDir = __dirname + '/.meteor/local/build'
 
-app = JSON.parse(
-  fs.readFileSync(buildDir + '/app.json', 'utf-8')
-)
+clientDir = path.join(__dirname, 'tests', 'bundle', 'programs', 'client')
 
-manifest = app.manifest
+if fs.existsSync(join(clientDir, 'packages'))
+  code = ''
+  for packageName in workerPackages
+    code += fs.readFileSync(
+      join(clientDir, 'packages', packageName + '.js'),
+      'utf8'
+    )
+else
+  for filename in fs.readdirSync(clientDir)
+    if path.extname(filename) is '.js'
+      code = fs.readFileSync(join(clientDir, filename), 'utf8')
 
-startsWith = (s1, s2) ->
-  s1.indexOf(s2) is 0
-
-jsFilesInPackage = (packageName) ->
-  entries = _.filter(
-    manifest,
-    (entry) ->
-      (startsWith(entry.path, "static_cacheable/packages/#{packageName}/") and
-       /\.js$/.test(entry.path))
-  )
-  unless entries.length > 0
-    throw new Error("no manifest entries found for package: #{packageName}")
-  return _.map(entries, (entry) -> entry.path)
-
-jsFiles = _.flatten(
-  (jsFilesInPackage(packageName) for packageName in workerPackages)
-)
-
-packageCode = ''
-for filename in jsFiles
-  contents = fs.readFileSync(buildDir + '/' + filename, 'utf-8')
-  path = filename.substr("static_cacheable/".length)
-  console.log path
-  packageCode +=
-    "\n\n\n" +
-    "// ------------------------------------------------------------------------\n" +
-    "// " + path + "\n\n" +
-    contents
-
-fs.writeFileSync('worker-packages.javascript', packageCode);
+fs.writeFileSync('worker-packages.javascript', code);
