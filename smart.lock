@@ -4,14 +4,14 @@
     "basePackages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.2.0rc1"
+        "tag": "v0.1.1rc2"
       }
     },
     "packages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.2.0rc1",
-        "commit": "297c55e33ad5400895148ebb8bc9beb3b21e4e90"
+        "tag": "v0.1.1rc2",
+        "commit": "09d9bd8f8f14b639d1e94fd179c0c8302297cbdf"
       },
       "browser-msg": {
         "git": "https://github.com/awwx/meteor-browser-msg.git",
@@ -20,8 +20,8 @@
       },
       "canonical-stringify": {
         "git": "https://github.com/awwx/meteor-canonical-stringify.git",
-        "tag": "v1.2",
-        "commit": "ef16273f50050cb478ade5a9aaba7e448962ece2"
+        "tag": "v1.3",
+        "commit": "f38e2c05bec97a501924f313846f5c95f70bb2c2"
       },
       "useragent": {
         "git": "https://github.com/awwx/meteor-useragent.git",

@@ -40,6 +40,10 @@ $ mrt install
 $ ./build.sh
 ```
 
+The build script can be passed the `--debug` option which will be
+passed to `meteor bundle`, and the created
+`worker-packages.javascript` file won't be minified.
+
 The `.javascript` extension is used to have the files included as
 static resources instead of being bundled into the main application's
 JavaScript code.
