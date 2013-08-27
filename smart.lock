@@ -4,14 +4,14 @@
     "basePackages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.1.1rc2"
+        "tag": "v0.1.1rc3"
       }
     },
     "packages": {
       "offline-common": {
         "git": "https://github.com/awwx/meteor-offline-common.git",
-        "tag": "v0.1.1rc2",
-        "commit": "09d9bd8f8f14b639d1e94fd179c0c8302297cbdf"
+        "tag": "v0.1.1rc3",
+        "commit": "11c700e82578b861cbeb6b06bee236fa08c42bae"
       },
       "browser-msg": {
         "git": "https://github.com/awwx/meteor-browser-msg.git",

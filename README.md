@@ -6,6 +6,10 @@ agent code which runs inside of the shared web
 worker, implementing the offline agent for browsers which support
 shared web workers.
 
+If you find bugs, please report them over in
+[Offline Data Issues](https://github.com/awwx/meteor-offline-data/issues)
+so that they're all collected in one place.
+
 The shared web worker envionment has no access to `window`,
 `document`, `console`, or the DOM.  Thus the module needs to be built
 using only code needed to implement the agent, leaving out browser
