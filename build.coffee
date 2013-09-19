@@ -38,4 +38,4 @@ else
     if path.extname(filename) is '.js'
       code = fs.readFileSync(join(clientDir, filename), 'utf8')
 
-fs.writeFileSync('worker-packages.javascript', code);
+fs.writeFileSync('worker-packages.js', code);
